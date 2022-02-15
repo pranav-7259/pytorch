@@ -8,8 +8,8 @@ cmake ..
 cmake --build . --target flatc -j 16
 mkdir -p "$ROOT/build/torch/csrc/jit/serialization"
 ./flatc --cpp --gen-mutable --scoped-enums \
-     -o "$ROOT/torch/csrc/jit/serialization" \
-     -c "$ROOT/torch/csrc/jit/serialization/mobile_bytecode.fbs"
-echo '// @generated' >> "$ROOT/torch/csrc/jit/serialization/mobile_bytecode_generated.h"
+     -o "$ROOT/test/cpp/embedded/" \
+     -c "$ROOT/test/cpp/embedded/schema.fbs"
+echo '// @generated' >> "$ROOT/test/cpp/embedded/schema_generated.h"
 cd "$ROOT" || exit
 exit
